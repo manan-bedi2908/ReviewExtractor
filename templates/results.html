@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Review Page</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body style="background-image: url(https://images.unsplash.com/photo-1500829243541-74b677fecc30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80); background-repeat: no-repeat; background-size: cover;">
+
+  <div class="table-users">
+   <div class="header" style="background-color: rgb(0, 81, 255);">Reviews</div>
+   <table cellspacing="0">
+      <tr>
+         <th style="font-weight: bold;">Product</th>
+         <th style="font-weight: bold;">Name</th>
+         <th style="font-weight: bold;">Rating</th>
+         <th style="font-weight: bold;">Comment Heading</th>
+         <th style="font-weight: bold; width=500px !important;">Comments</th>
+      </tr>
+         {% for review in reviews %}
+      <tr>
+          <td>{{review['Product']}}</td>
+         <td>{{review['Name']}}</td>
+         <td>{{review['Rating']}}</td>
+         <td>{{review['Comment Heading']}}</td>
+         <td style="width: 500px !important;">{{review['Comment']}} </td>
+       {% endfor %}
+   </table>
+</div>
+
+
+
+</body>
+
+</html>
